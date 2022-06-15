@@ -6,7 +6,10 @@
 # install linux:
 # https://docs.docker.com/desktop/linux/install/
 
-#
+# run hello-world
+docker run hello-world
+
+# build Dockerfile
 docker build -t docker-lunch .
 
 # Ports: <HOST>:<CONTAINER>

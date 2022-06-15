@@ -27,6 +27,9 @@ docker ps
 # exec
 docker container exec docker-lunch-1 ls -als /
 
+# logs
+docker logs
+
 # local dir volumes
 docker run --init --name dl-container -p 3000:3000 -v $PWD/stuff:/app/stuff docker-lunch
 # named volumes
@@ -35,3 +38,4 @@ docker run --init --name dl-container -p 3000:3000 -v lunch:/app/stff docker-lun
 # references:
 # volumes: https://docs.docker.com/storage/volumes/
 # dockerfile: https://docs.docker.com/engine/reference/builder
+# presentation on how to make your own container software: https://youtu.be/Utf-A4rODH8

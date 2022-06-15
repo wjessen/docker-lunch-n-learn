@@ -12,10 +12,9 @@ docker build -t docker-lunch .
 # Ports: <HOST>:<CONTAINER>
 # docker run <image>
 docker run --init --name dl-container -p 3000:3000 docker-lunch
+
 # detached mode
 docker run -d --name dl-container -p 3000:3000 docker-lunch
-
-
 
 # view running containers:
 docker container ls
@@ -25,9 +24,10 @@ docker ps
 # exec
 docker container exec docker-lunch-1 ls -als /
 
-# volumes
-docker run --init --name dl-container -p 3000:3000 -v docker-lunch
-
+# local dir volumes
+docker run --init --name dl-container -p 3000:3000 -v $PWD/stuff:/app/stuff docker-lunch
+# named volumes
+docker run --init --name dl-container -p 3000:3000 -v lunch:/app/stff docker-lunch
 
 # references:
 # volumes: https://docs.docker.com/storage/volumes/
